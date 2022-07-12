@@ -3,10 +3,28 @@ const maxWidth = 1000
 const scaleUpVal = 2.5
 const padding = 0.5
 const N = 100
+let sorted = true
+let absoluteWait = 500
+let iterations = 0, recursions = 0
 
+const sortResult = document.querySelector('.sort-result')
 const barsDiv = document.querySelector('.bars')
+const rangeSelect = document.querySelector('#customRange')
+let wait = parseInt(absoluteWait/(rangeSelect.valueAsNumber))
+
+
+rangeSelect.addEventListener('input', (e) => {
+    wait = parseInt(absoluteWait/(e.target.valueAsNumber))
+    console.log(wait);
+})
 
 const createBars = () => {
+    iterations = 0
+    recursions = 0
+    sortResult.setAttribute('hidden', true)
+    sortResult.firstElementChild.innerHTML = "Number Of Recusrsive Calls = "
+    sortResult.lastElementChild.innerHTML = "Number Of Iterations = "
+    sorted = false
     barsDiv.innerHTML = ""
     bars.splice(0, bars.length)
 
@@ -38,3 +56,19 @@ const swap = (el1, el2) => {
 
 const newArrBtn = document.querySelector('#new-array')
 newArrBtn.addEventListener('click', createBars)
+
+
+const toggleBtns = () => {
+    btns = document.querySelectorAll('.btn')
+    btns.forEach(element => {
+        element.disabled = !element.disabled
+    });
+}
+
+const showResult = () => {
+    const text1 = document.createTextNode(`${recursions}`)
+    const text2 = document.createTextNode(`${iterations}`)
+    sortResult.firstElementChild.appendChild(text1)
+    sortResult.lastElementChild.appendChild(text2)
+    sortResult.toggleAttribute('hidden')
+}

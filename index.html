@@ -18,15 +18,24 @@
                 <button id="new-array" class="btn btn-outline-success">New Array</button>
             </div>
             <div class="col-8">
-                <button id="bubble-sort" class="btn btn-outline-danger ms-2 me-2">Bubble Sort</button>
-                <button id="selection-sort" class="btn btn-outline-danger ms-2 me-2">Selection Sort</button>
-                <button id="insertion-sort" class="btn btn-outline-danger ms-2 me-2">Insertion Sort</button>
-                <button id="quick-sort" class="btn btn-outline-danger ms-2 me-2">Quick Sort</button>
-                <button id="merge-sort" class="btn btn-outline-danger ms-2 me-2">Merge Sort</button>
+                <button id="bubble-sort" class="sort-btn btn btn-outline-danger ms-2 me-2">Bubble Sort</button>
+                <button id="selection-sort" class="sort-btn btn btn-outline-danger ms-2 me-2">Selection Sort</button>
+                <button id="insertion-sort" class="sort-btn btn btn-outline-danger ms-2 me-2">Insertion Sort</button>
+                <button id="quick-sort" class="sort-btn btn btn-outline-danger ms-2 me-2">Quick Sort</button>
+                <button id="merge-sort" class="sort-btn btn btn-outline-danger ms-2 me-2">Merge Sort</button>
             </div>
         </div>
 
         <div class="bars d-flex justify-content-center align-items-start mt-5"></div>
+        <div class="text-warning mt-5 text-center">
+            <label for="customRange" class="form-label"><strong>Adjust Speed</strong></label>
+            <input type="range" class="form-range" min="5" max="500" step="5" id="customRange" value="50">
+        </div>
+        <div class="sort-result text-white mt-3" hidden>
+            <h5 class="">Number of recursive calls = </h5>
+            <h5 class="">Number of iterations = </h5>
+        </div>
+
     </div>
 
 
@@ -36,6 +45,8 @@
     <script src="./javascripts/bubble.js"></script>
     <script src="./javascripts/insertion.js"></script>
     <script src="./javascripts/selection.js"></script>
+    <script src="./javascripts/quick.js"></script>
+    <script src="./javascripts/merge.js"></script>
 </body>
 
 </html>
